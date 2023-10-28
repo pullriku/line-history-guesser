@@ -159,12 +159,7 @@ function game() {
     const result = his.searchByDate(lineHistory, randomDate)
         .split("<br>")
         .slice(1, -3)
-        .map(value => {
-        console.log(/\d日/.test(value), /\b\/\d/.test(value), /イベント/.test(value), !(/\d日/.test(value) || /\b\/\d/.test(value) || /イベント/.test(value)));
-        console.log(/\b\/\d/.exec(value));
-        return value;
-    })
-        .filter(value => !(/\d日/.test(value) || /\b\/\d/.test(value) || /イベント/.test(value)))
+        .filter(value => !(/\d日/.test(value) || /\b\/\d/.test(value) || /イベント/.test(value)) || /周年/.test(value))
         .join("<br>");
     writeResult(result, outputField);
 }

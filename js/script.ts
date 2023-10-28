@@ -188,7 +188,7 @@ function game() {
         .split("<br>")
         .slice(1, -3)
         .filter(value => 
-            !(/\d日/.test(value) || /\b\/\d/.test(value) || /イベント/.test(value))
+            !(/\d日/.test(value) || /\b\/\d/.test(value) || /イベント/.test(value)) || /周年/.test(value)
         )
         .join("<br>");
     writeResult(result, outputField);
