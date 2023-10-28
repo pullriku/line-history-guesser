@@ -252,7 +252,7 @@ function writeScore(score: number): void {
         scoreField.innerHTML = `スコア: ${score}/500`;
     }
     if (stageField?.innerHTML) {
-        stageField.innerHTML = `ステージ: ${stage}/10`;
+        stageField.innerHTML = `ステージ: ${stage}/5`;
     }
 }
 

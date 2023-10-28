@@ -212,7 +212,7 @@ function writeScore(score) {
         scoreField.innerHTML = `スコア: ${score}/500`;
     }
     if (stageField?.innerHTML) {
-        stageField.innerHTML = `ステージ: ${stage}/10`;
+        stageField.innerHTML = `ステージ: ${stage}/5`;
     }
 }
 function restart() {
