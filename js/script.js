@@ -58,7 +58,7 @@ function initEventListeners() {
         const sumScore = 500 - diffDays;
         score += sumScore;
         writeScore(score);
-        if (stage < 10) {
+        if (stage < 5) {
             stage += 1;
             writeScore(score);
             game();
