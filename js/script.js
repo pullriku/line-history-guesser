@@ -55,7 +55,7 @@ function initEventListeners() {
         const inputDate = new Date(date);
         const diff = Math.abs(correctDate.getTime() - inputDate.getTime());
         const diffDays = Math.ceil(diff / (1000 * 60 * 60 * 24));
-        const sumScore = 1000 - diffDays;
+        const sumScore = 500 - diffDays;
         score += sumScore;
         writeScore(score);
         if (stage < 10) {
