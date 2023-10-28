@@ -209,7 +209,7 @@ function writeResult(result, htmlElement) {
 }
 function writeScore(score) {
     if (scoreField?.innerHTML) {
-        scoreField.innerHTML = `スコア: ${score}/500`;
+        scoreField.innerHTML = `スコア: ${score}/5000`;
     }
     if (stageField?.innerHTML) {
         stageField.innerHTML = `ステージ: ${stage}/5`;
