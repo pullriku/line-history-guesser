@@ -4,6 +4,8 @@
  */
 import * as utl from "./utils.js";
 import * as his from "./history.js";
+const STAGE_COUNT = 5;
+const SCORE_COUNT = 500;
 const outputField = document.getElementById("outputField");
 const scoreField = document.getElementById("scoreField");
 const stageField = document.getElementById("stageField");
@@ -55,10 +57,10 @@ function initEventListeners() {
         const inputDate = new Date(date);
         const diff = Math.abs(correctDate.getTime() - inputDate.getTime());
         const diffDays = Math.ceil(diff / (1000 * 60 * 60 * 24));
-        const sumScore = 500 - diffDays;
+        const sumScore = SCORE_COUNT - diffDays;
         score += sumScore;
         writeScore(score);
-        if (stage < 5) {
+        if (stage < STAGE_COUNT) {
             stage += 1;
             writeScore(score);
             game();

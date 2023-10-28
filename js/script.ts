@@ -6,6 +6,8 @@
 import * as utl from "./utils.js";
 import * as his from "./history.js";
 
+const STAGE_COUNT = 5;
+const SCORE_COUNT = 500;
 
 const outputField = document.getElementById("outputField") as HTMLElement;
 const scoreField = document.getElementById("scoreField");
@@ -65,12 +67,12 @@ function initEventListeners() {
         const diff = Math.abs(correctDate.getTime() - inputDate.getTime());
         const diffDays = Math.ceil(diff / (1000 * 60 * 60 * 24));
 
-        const sumScore = 500 - diffDays;
+        const sumScore = SCORE_COUNT - diffDays;
         
         score += sumScore;
         writeScore(score);
 
-        if(stage < 5) {
+        if(stage < STAGE_COUNT) {
             stage += 1;
             writeScore(score);
             game();
@@ -241,7 +243,7 @@ function writeResult(result: string, htmlElement: HTMLElement): void {
 
 function writeScore(score: number): void {
     if (scoreField?.innerHTML) {
-        scoreField.innerHTML = `スコア: ${score}`;
+        scoreField.innerHTML = `スコア: ${score}/500`;
     }
     if (stageField?.innerHTML) {
         stageField.innerHTML = `ステージ: ${stage}/10`;
