@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link rel="icon" href="./icon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./icon/apple-touch-icon.png" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="cssSelector" rel="stylesheet" href="style.css">
+    <title>History Guesser</title>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li><img src="./icon/icon.png" alt=""></li>
+            <li id="title">History Guesser<div id="specialMessage"></div></li>
+        </ul>
+    </header>
+    <main>
+        <nav>
+            <button type="button" id="restartButton">リスタート</button>
+            <span id="stageField">ステージ</span>
+            <span id="scoreField">スコア</span>
+        </nav>
+
+        <div class="menu">
+            <p>
+                📝履歴ファイルを選択:
+                <input type="file" , id="file">
+            </p>
+        </div>
+        <div class="menu">
+            <!-- <p>
+                <label for="dateTimeInput">💬検索: </label><br>
+                <input type="text" id="wordInput">
+                <button type="button" id="wordSubmitButton">確定</button>
+            </p>
+            <p>
+                <label for="">🎲ランダム表示:</label><br>
+                <button type="button" id="randomSubmitButton">確定</button>
+            </p> -->
+            <h2>履歴の日付を当てよう</h2>
+            <input type="date" name="" id="datePicker" value="">
+            <button type="button" id="dateSubmitButton">確定</button>
+        </div>
+        <!-- <div id="changeButtonArea">
+            <ul>
+                <li>
+                    <button type="button" class="dateChangeButton" id="previousDateButton">👈</button>
+                </li>
+                <li>
+                    <input type="date" class="dateChangeButton" id="currentDateField" value=""></button>
+                </li>
+                <li>
+                    <button type="button" class="dateChangeButton" id="nextDateButton">👉</button>
+                </li>
+            </ul>
+
+        </div> -->
+        <div id="outputField">
+            エラー。<br>
+            JavaScriptを有効にしてください。
+        </div>
+        <p>
+            <button onclick="location.href='#'">🔼🔼</button>
+        </p>
+    </main>
+
+    <footer>
+        &copy;2022 Tyomo<br>
+        <a href="./versions.html">情報</a>
+        ・
+        <a href="https://github.com/TyomoGit/HistoryViewerJavaScriptEdition" target="_blank">Github</a>
+    </footer>
+    <script type="module" src="./js/script.js"></script>
+</body>
+
+</html>
