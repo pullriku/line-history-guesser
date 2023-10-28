@@ -44,8 +44,10 @@ function initEventListeners() {
     }, false);
     const dateSubmitButton = document.getElementById("dateSubmitButton");
     dateSubmitButton?.addEventListener("click", () => {
-        if (date == undefined)
+        if (date == undefined) {
+            alert("日付を選択してください。");
             return;
+        }
         drawErrorMessageIfNeeded();
         if (correctDateString == undefined)
             return;
@@ -151,6 +153,7 @@ function game() {
     const dates = lineHistory.dateArray;
     const randomDate = chooseOne(dates);
     correctDateString = randomDate.split("/").map(value => utl.zeroPadding(parseInt(value), 2)).join("/");
+    drawErrorMessageIfNeeded();
     const result = his.searchByDate(lineHistory, randomDate).split("<br>").slice(1, -3).join("<br>");
     writeResult(result, outputField);
 }
