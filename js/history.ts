@@ -90,7 +90,8 @@ export function searchByKeyword(lineHistory: LineHistory, keyword: string): stri
             const lineCount = index - countStart;
             const dateString = date.toLocaleDateString();
             
-            result += `<a href="javascript:runSearchByDate('${dateString}', '${lineCount}');" id="dateLink"><spam style="font-weight: bold;">${dateString}@${lineCount}</spam></a> ${line} <br>`;
+            // result += `<a href="javascript:runSearchByDate('${dateString}', '${lineCount}');" id="dateLink"><spam style="font-weight: bold;">${dateString}@${lineCount}</spam></a> ${line} <br>`;
+            result += line + "<br>";
         }
     });
     
@@ -126,11 +127,12 @@ function calcDateIndices(lines: string[]): {[date: string]: number} {
 
 function createLineWithTime(line: string, lineCount: number, currentDate?: Date): string {
     const lineInfo = line.split("\t");
-    if(lineInfo.length >= 2) {
-        lineInfo[0] = `<a href="javascript:showLineInfoAlert('${currentDate?.toLocaleDateString()}',${lineCount});">${lineInfo[0]}</a>`;
-    }
+    // if(lineInfo.length >= 2) {
+    //     lineInfo[0] = `<a href="javascript:showLineInfoAlert('${currentDate?.toLocaleDateString()}',${lineCount});">${lineInfo[0]}</a>`;
+    // }
     
-    return `<span id="${lineCount}">${lineInfo.join("\t")}</span><br>`;
+    // return `<span id="${lineCount}">${lineInfo.join("\t")}</span><br>`;
+    return lineInfo.join("\t") + "<br>";
 }
 
 // function checkDate(year: number = 1970, month: number = 1, day: number = 1): boolean {

@@ -184,7 +184,13 @@ function game() {
     
     correctDateString = randomDate.split("/").map(value => utl.zeroPadding(parseInt(value), 2)).join("/");
     drawErrorMessageIfNeeded();
-    const result = his.searchByDate(lineHistory, randomDate).split("<br>").slice(1, -3).join("<br>");
+    const result = his.searchByDate(lineHistory, randomDate)
+        .split("<br>")
+        .slice(1, -3)
+        .filter(value => 
+            !(/\d日/.test(value) || /\b\/\d/.test(value) || /イベント/.test(value))
+        )
+        .join("<br>");
     writeResult(result, outputField);
     
 }
@@ -253,7 +259,6 @@ function writeScore(score: number): void {
 function restart(): void {
     score = 0;
     stage = 1;
-    flush();
     writeScore(score);
     game();
 }

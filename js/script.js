@@ -156,7 +156,16 @@ function game() {
     const randomDate = chooseOne(dates);
     correctDateString = randomDate.split("/").map(value => utl.zeroPadding(parseInt(value), 2)).join("/");
     drawErrorMessageIfNeeded();
-    const result = his.searchByDate(lineHistory, randomDate).split("<br>").slice(1, -3).join("<br>");
+    const result = his.searchByDate(lineHistory, randomDate)
+        .split("<br>")
+        .slice(1, -3)
+        .map(value => {
+        console.log(/\d日/.test(value), /\b\/\d/.test(value), /イベント/.test(value), !(/\d日/.test(value) || /\b\/\d/.test(value) || /イベント/.test(value)));
+        console.log(/\b\/\d/.exec(value));
+        return value;
+    })
+        .filter(value => !(/\d日/.test(value) || /\b\/\d/.test(value) || /イベント/.test(value)))
+        .join("<br>");
     writeResult(result, outputField);
 }
 function chooseOne(array) {
@@ -205,7 +214,7 @@ function writeResult(result, htmlElement) {
 }
 function writeScore(score) {
     if (scoreField?.innerHTML) {
-        scoreField.innerHTML = `スコア: ${score}`;
+        scoreField.innerHTML = `スコア: ${score}/500`;
     }
     if (stageField?.innerHTML) {
         stageField.innerHTML = `ステージ: ${stage}/10`;
@@ -214,7 +223,6 @@ function writeScore(score) {
 function restart() {
     score = 0;
     stage = 1;
-    flush();
     writeScore(score);
     game();
 }
