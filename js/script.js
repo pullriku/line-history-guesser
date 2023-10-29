@@ -209,10 +209,10 @@ function writeResult(result, htmlElement) {
 }
 function writeScore(score) {
     if (scoreField?.innerHTML) {
-        scoreField.innerHTML = `スコア: ${score}/5000`;
+        scoreField.innerHTML = `スコア: ${score}/${SCORE_COUNT * STAGE_COUNT}`;
     }
     if (stageField?.innerHTML) {
-        stageField.innerHTML = `ステージ: ${stage}/5`;
+        stageField.innerHTML = `ステージ: ${stage}/${STAGE_COUNT}`;
     }
 }
 function restart() {

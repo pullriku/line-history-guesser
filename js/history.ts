@@ -14,7 +14,6 @@ export type LineHistory = {
     readonly dateArray: string[];
 };
 
-
 export function newLineHistory(data: String): LineHistory {
     const _data = data
         .replace(/\r/g, "")
