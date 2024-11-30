@@ -11,12 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TyomoGit/HistoryViewerJavaScriptEdition.git"
+    "url": "git+https://github.com/pullriku/HistoryViewerJavaScriptEdition.git"
   },
-  "author": "TyomoGit",
+  "author": "pullriku",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TyomoGit/HistoryViewerJavaScriptEdition/issues"
+    "url": "https://github.com/pullriku/HistoryViewerJavaScriptEdition/issues"
   },
-  "homepage": "https://github.com/TyomoGit/HistoryViewerJavaScriptEdition#readme"
+  "homepage": "https://github.com/pullriku/HistoryViewerJavaScriptEdition#readme"
 }

@@ -178,18 +178,18 @@ function initEventListeners() {
 // }
 
 function game() {
-    flush();
+    flush(); // 初期化
     const dates = lineHistory.dateArray;
     const randomDate: string = chooseOne(dates);
     
     correctDateString = randomDate.split("/").map(value => utl.zeroPadding(parseInt(value), 2)).join("/");
     drawErrorMessageIfNeeded();
     const result = his.searchByDate(lineHistory, randomDate)
-        .split("<br>")
-        .slice(1, -3)
+        .split("<br>") // 改行区切り
+        .slice(1, -3) // 日付と行数を削除
         .filter(value => 
             !(/\d日/.test(value) || /\b\/\d/.test(value) || /イベント/.test(value)) || /周年/.test(value)
-        )
+        ) // わかりやすい日を除外
         .join("<br>");
     writeResult(result, outputField);
     
